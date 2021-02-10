@@ -11,6 +11,9 @@ public class TriangleMaker : MonoBehaviour
 	[SerializeField]
 	private Vector3 size = Vector3.one;
 	
+	private List<Material> materialList;
+	private MeshRenderer meshRenderer;
+	
 	
     // Start is called before the first frame update
     void Start()
@@ -31,6 +34,20 @@ public class TriangleMaker : MonoBehaviour
 		meshBuilder.BuildTriangle(p0,p1,p2, 0);
 		
 		meshFilter.mesh = meshBuilder.CreateMesh();
+		
+		MeshRenderer meshRenderer = this.GetComponent<MeshRenderer>();
+		AddMaterials();
+		meshRenderer.materials = materialList.ToArray();
         
     }
+	
+	private void AddMaterials(){
+		
+		Material greenMat = new Material(Shader.Find("Specular"));
+		greenMat.color = Color.green;
+		
+		materialList = new List<Material>();
+		materialList.Add(greenMat);
+	}
+	
 }

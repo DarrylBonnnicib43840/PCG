@@ -66,6 +66,8 @@ public class MeshBuilder
 		uvs.Add(new Vector2(1,1));
 	}
 	
+
+	
 	// build Mesh method
 	public Mesh CreateMesh(){
 		
