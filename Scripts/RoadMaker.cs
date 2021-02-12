@@ -8,19 +8,19 @@ using UnityEngine;
 public class RoadMaker : MonoBehaviour
 {
     [SerializeField]
-    private float radius = 30f; // this defines the radius of the path
+    private float radius = 30f; /
 
     [SerializeField]
     private float segments = 300f;
 
     [SerializeField]
-    private float lineWidth = 0.3f; // middle white line road marker
+    private float lineWidth = 0.3f; 
 
     [SerializeField]
-    private float roadWidth = 8f; // width of the road on each side of the line
+    private float roadWidth = 8f; 
 
     [SerializeField]
-    private float edgeWidth = 1f; // widht of our road barrier at the edge of our road
+    private float edgeWidth = 1f; 
 
     [SerializeField]
     private float edgeHeight = 1f;
@@ -59,7 +59,7 @@ public class RoadMaker : MonoBehaviour
 		radius = Random.Range(30,120);
 
 
-        //1. Divide the circular race track into segments denoted in degrees and each point is defined by each segment
+       
         //   Create the points and store them in a list
         float segmentDegrees = 360f / segments;
 
@@ -88,7 +88,7 @@ public class RoadMaker : MonoBehaviour
             points[i] += centreDirection * noise * control;
         }
 
-        //2. function to define the path - the path is defined by each segment
+        // function to define the path - the path is defined by each segment
         for (int i = 1; i < points.Count + 1; i++)
         {
             Vector3 pPrev = points[i - 1];
@@ -106,9 +106,7 @@ public class RoadMaker : MonoBehaviour
         meshCollider.sharedMesh = meshFilter.mesh;
     }
 
-    //3. This method will used to create the different segments for each segment we are going to draw the road marker 
-    //   (i.e. white line in the middle), draw the road on each side of the line, draw the edges - all these are going 
-    //   to be placed in different positions
+   
     private void ExtrudeRoad(MeshBuilder meshBuilder, Vector3 pPrev, Vector3 pCurr, Vector3 pNext)
     {
         //Road Line
@@ -152,7 +150,7 @@ public class RoadMaker : MonoBehaviour
 
     }
 
-    //4. Create each quad
+    // Create each quad
     private void MakeRoadQuad(MeshBuilder meshBuilder, Vector3 pPrev, Vector3 pCurr, Vector3 pNext,
                               Vector3 offset, Vector3 targetOffset, int submesh)
     {
