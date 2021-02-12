@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class CubeMaker : MonoBehaviour
 {
-		[SerializeField]
+	[SerializeField]
 	private Vector3 size = Vector3.one;
 	private List<Material> materialsList;
 	
