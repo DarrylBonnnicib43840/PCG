@@ -8,7 +8,7 @@ using UnityEngine;
 public class RoadMaker : MonoBehaviour
 {
     [SerializeField]
-    private float radius = 30f; /
+    private float radius = 30f; 
 
     [SerializeField]
     private float segments = 300f;
